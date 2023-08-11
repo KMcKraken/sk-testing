@@ -1,0 +1,53 @@
+@import '$styles/color';
+
+// Spacing
+$def-pad: 1rem 2rem;
+$mob-pad: 1.5rem;
+$p-2: 2rem;
+$p-1: 1rem;
+
+// Animation
+$trans-time: .1s ease-in-out;
+
+// Styles
+$grad-angle: 105deg;
+$br-mob: .4rem;
+$br-web: .6rem;
+
+// Responsive
+$bp-mob: 1;
+$bp-max: 1600px;
+
+// Utils
+.site-max {
+    max-width: $bp-max;
+    margin: 0 auto;
+}
+
+.dull {
+    color: $text-dull;
+}
+
+.list-gap {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+@media (min-aspect-ratio: $bp-mob) {
+    .list-gap {
+        flex-direction: row;
+    }
+}
+
+.no-click {
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.artist-pick {
+    color: $ui-fav;
+}

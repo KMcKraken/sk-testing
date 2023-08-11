@@ -1,0 +1,80 @@
+// Font Import
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Variables
+@import '$styles/params';
+
+// Reset
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Default
+body,
+html {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    background: $bg-1;
+    color: $text-main;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+// Reset Elements
+a,
+a:visited,
+a:hover {
+    color: $primary;
+}
+
+// Utils
+
+
+// Main Styles
+
+
+// Custom Scollbar
+/* width */
+::-webkit-scrollbar {
+    width: .4rem;
+}
+/* button */
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 100vh;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $primary; 
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-track-piece {
+    background: transparent; 
+}
+/* Corner */
+::-webkit-scrollbar-corner {
+    background: transparent; 
+}
+/* Resizer */
+::-webkit-resizer {
+    width: 0;
+    height: 0;
+}
