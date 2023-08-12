@@ -1,16 +1,16 @@
-import axios from 'axios';
+import PocketBase from 'pocketbase';
 
-const API_URL = 'http://localhost:1337/graphql';
+const pb = new PocketBase('http://127.0.0.1:8090');
 
-export async function fetchGraphQL(query, variables = {}) {
-  const response = await axios.post(API_URL, {
-    query,
-    variables,
-  });
+// list and filter "example" collection records
+const result = await pb.collection('example').getList(1, 20, {
+    filter: 'status = true && created > "2022-08-01 10:00:00"'
+});
 
-  if (response.status !== 200) {
-    throw new Error(`GraphQL request failed with status ${response.status}`);
-  }
+// authenticate as auth collection record
+const userData = await pb.collection('users').authWithPassword('test@example.com', '123456');
 
-  return response.data;
-}
+// or as super-admin
+const adminData = await pb.admins.authWithPassword('test@example.com', '123456');
+
+// and much more...
