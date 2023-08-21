@@ -4,8 +4,10 @@
 
     import EditText from "$comp/EditText.svelte";
 
+
     import { onMount } from 'svelte';
     import PocketBase from 'pocketbase';
+    import HoverMenu from '$comp/HoverMenu.svelte';
 
     const pb = new PocketBase('http://127.0.0.1:8090');
 
@@ -23,32 +25,20 @@
 
 {#each items as item}
     <div class="card">
-        <EditText
-            text="{item.name}"
-            charId="{item.id}"
-            fieldId="name"
-        />
-        <p class="race">{item.race}</p>
-        <EditText
-            text="{item.desc}"
-            charId="{item.id}"
-            fieldId="desc"
-        />
-        <EditText
-            text="{item.asp_1}"
-            charId="{item.id}"
-            fieldId="asp_1"
-        />
-        <EditText
-            text="{item.asp_2}"
-            charId="{item.id}"
-            fieldId="asp_2"
-        />
-        <EditText
-            text="{item.asp_3}"
-            charId="{item.id}"
-            fieldId="asp_3"
-        />
+        <HoverMenu>
+            <EditText
+                slot="main"
+                text="{item.name}"
+                charId="{item.id}"
+                fieldId="name"
+            />
+            <EditText
+                slot="tooltip"
+                text="{item.desc}"
+                charId="{item.id}"
+                fieldId="desc"
+            />
+        </HoverMenu>
     </div>
 {/each}
 
