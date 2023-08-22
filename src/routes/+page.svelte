@@ -8,6 +8,7 @@
     import { onMount } from 'svelte';
     import PocketBase from 'pocketbase';
     import HoverMenu from '$comp/HoverMenu.svelte';
+    import EditMD from '$comp/EditMD.svelte';
 
     const pb = new PocketBase('http://127.0.0.1:8090');
 
@@ -32,13 +33,10 @@
                 charId="{item.id}"
                 fieldId="name"
             />
-            <EditText
-                slot="tooltip"
-                text="{item.desc}"
-                charId="{item.id}"
-                fieldId="desc"
-            />
         </HoverMenu>
+        <EditMD
+            value="{item.desc}"
+        />
     </div>
 {/each}
 
