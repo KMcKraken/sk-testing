@@ -67,7 +67,10 @@
 </script>
 
 {#if !isEditing}
-  <p on:dblclick={startEditing}>{text}</p>
+  <p on:dblclick={startEditing}>
+    {text}
+    <slot />
+</p>
 {:else if isEditing}
   <input
     type="text"
@@ -80,6 +83,7 @@
 {/if}
 
 <style lang="scss">
+    
   @import "$styles/params";
 
   input,
