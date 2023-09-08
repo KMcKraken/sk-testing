@@ -12,6 +12,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
+		"mdsvex": "^0.11.0",
 		"overlayscrollbars": "^2.1.1",
 		"sass": "^1.62.1",
 		"svelte": "^3.54.0",
@@ -23,10 +24,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@shoelace-style/shoelace": "^2.8.0",
 		"axios": "^1.4.0",
 		"jquery": "^3.7.0",
 		"pocketbase": "^0.14.4",
-		"qs": "^6.11.1",
-		"svelte-markdown": "^0.2.3"
+		"qs": "^6.11.1"
 	}
 }
